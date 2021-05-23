@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Optional;
 
-@WebServlet("/users")
+//@WebServlet("/users")
 public class UsersServlet extends HttpServlet {
     private UsersDB db;
 
@@ -21,7 +21,6 @@ public class UsersServlet extends HttpServlet {
         db = UsersDB.getInstance();
     }
 
-    // отримання сторінки із користувачами
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 

@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Optional;
 
-@WebServlet("/add")
+//@WebServlet("/add")
 public class AddServlet extends HttpServlet {
 
     private UsersDB db;
