@@ -12,7 +12,7 @@
     <title>Login page</title>
 </head>
 <body class="w3-light-grey">
-<form action="login" method="post">
+<form action="" method="post">
     <div class="w3-card-4">
         <div class="w3-container w3-center w3-green">
             <h2>Login page</h2>

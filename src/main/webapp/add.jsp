@@ -18,10 +18,10 @@
             <h2>Add user</h2>
         </div>
         <label>Name:
-            <input type="text" name="login" placeholder="Enter login" class="w3-border"/>
+            <input type="text" name="login" required placeholder="Enter login" class="w3-border"/>
         </label>
         <label>Password:
-            <input type="password" name="password" placeholder="Enter password" class="w3-border"/>
+            <input type="password" name="password" required placeholder="Enter password" class="w3-border"/>
         </label>
         Role:
         <select name="role">
@@ -34,14 +34,8 @@
         <div>
             <div>
                 <button class="w3-btn w3-green w3-round-large w3-margin-bottom"
-                        onclick="location.href='/users'">Users list</button>
-            </div>
-        </div>
-
-        <div>
-            <div>
-                <button class="w3-btn w3-green w3-round-large w3-margin-bottom"
-                        onclick="location.href='/logout'">Logout</button>
+                        onclick="location.href='${pageContext.request.contextPath}/users'">Users list
+                </button>
             </div>
         </div>
     </div>

@@ -46,7 +46,8 @@
     <div>
         <div>
             <button class="w3-btn w3-green w3-round-large w3-margin-bottom"
-                    onclick="location.href='/add'">Add New User</button>
+                    onclick="location.href='${pageContext.request.contextPath}/add'">Add New User
+            </button>
         </div>
     </div>
     </c:if>
@@ -54,7 +55,8 @@
     <div>
         <div>
             <button class="w3-btn w3-green w3-round-large w3-margin-bottom"
-                    onclick="location.href='/logout'">Logout</button>
+                    onclick="location.href='${pageContext.request.contextPath}/logout'">Logout
+            </button>
         </div>
     </div>
 </body>
