@@ -46,7 +46,7 @@ public class AddServlet extends HttpServlet {
                     "You can't add user with this role</div>");
             req.setAttribute("access_admin", Role.ROLE_ADMIN);
             req.setAttribute("users", db.getInMemoryDB());
-            req.getRequestDispatcher(req.getContextPath() + "users.jsp").include(req, resp);
+            req.getRequestDispatcher("users.jsp").include(req, resp);
 
         } else if (userRole.isPresent() && userRole.get().equals(Role.ROLE_SUPPORT)) {
             if (role.equals(Role.ROLE_USER)) {
@@ -57,7 +57,7 @@ public class AddServlet extends HttpServlet {
                     "You can't add user with this role</div>");
             req.setAttribute("access_support", Role.ROLE_SUPPORT);
             req.setAttribute("users", db.getInMemoryDB());
-            req.getRequestDispatcher(req.getContextPath() + "users.jsp").include(req, resp);
+            req.getRequestDispatcher("users.jsp").include(req, resp);
         }
     }
 

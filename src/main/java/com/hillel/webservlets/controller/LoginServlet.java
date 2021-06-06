@@ -35,15 +35,14 @@ public class LoginServlet extends HttpServlet {
 
         if (login.isEmpty()) {
             writer.print(colorText + "Login is empty</div>");
-            req.getRequestDispatcher(req.getContextPath() + "index.jsp").include(req, resp);
+            req.getRequestDispatcher("index.jsp").include(req, resp);
         } else if (password.isEmpty()) {
             writer.print(colorText + "Password is empty</div>");
-            req.getRequestDispatcher(req.getContextPath() + "index.jsp").include(req, resp);
+            req.getRequestDispatcher("index.jsp").include(req, resp);
         } else if (db.getUserByCredentials(login, password).isEmpty()) {
             writer.print(colorText + "Login or password incorrect. Try again.</div>");
-            req.getRequestDispatcher(req.getContextPath() + "index.jsp").include(req, resp);
+            req.getRequestDispatcher("index.jsp").include(req, resp);
         } else if (db.getUserByCredentials(login, password).isPresent()) {
-
             session.setAttribute("login", login);
             req.setAttribute("users", db.getInMemoryDB());
             resp.sendRedirect(req.getContextPath() + "/users");

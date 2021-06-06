@@ -36,7 +36,7 @@ public class UsersServlet extends HttpServlet {
         req.setAttribute("access_support", Role.ROLE_SUPPORT);
 
         req.setAttribute("users", db.getInMemoryDB());
-        req.getRequestDispatcher("users.jsp").forward(req, resp);
+        req.getRequestDispatcher("/users.jsp").forward(req, resp);
     }
 
     @Override
@@ -57,6 +57,8 @@ public class UsersServlet extends HttpServlet {
             if (deleteUserRole.isPresent() && deleteUserRole.get().equals(Role.ROLE_SUPPORT)
                     || deleteUserRole.isPresent() && deleteUserRole.get().equals(Role.ROLE_USER)) {
                 db.removeUser(deleteUser);
+                writer.print("<div style=\"color:gray;\" text-align: center;\">" +
+                        "User: <span style=\"color:red;\">" + deleteUser + "</span> has been deleted</div>");
             } else {
                 writer.print("<div style=\"color:Tomato;\" text-align: center;\">" +
                         "You can't delete user with this role</div>");
@@ -68,6 +70,8 @@ public class UsersServlet extends HttpServlet {
             req.setAttribute("users", db.getInMemoryDB());
             if (deleteUserRole.isPresent() && deleteUserRole.get().equals(Role.ROLE_USER)) {
                 db.removeUser(deleteUser);
+                writer.print("<div style=\"color:gray;\" text-align: center;\">" +
+                        "User: <span style=\"color:red;\">" + deleteUser + "</span> has been deleted</div>");
             } else {
                 writer.print("<div style=\"color:Tomato;\" text-align: center;\">" +
                         "You can't delete user with this role</div>");

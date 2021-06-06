@@ -32,7 +32,7 @@
                 <td><c:out value="${user.value.role}"/></td>
                 <c:if test="${access_admin == user_role or access_support == user_role}">
                     <td>
-                        <form action="/users" method="post">
+                        <form action="${pageContext.request.contextPath}/users" method="post">
                             <input type="hidden" name="delete-user" value="${user.key}"/>
                             <input type="submit" value="Delete"/>
                         </form>

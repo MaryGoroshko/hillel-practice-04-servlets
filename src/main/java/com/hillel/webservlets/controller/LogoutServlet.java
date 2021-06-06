@@ -20,14 +20,14 @@ public class LogoutServlet extends HttpServlet {
 
         req.getSession().invalidate();
 
-        req.getRequestDispatcher(req.getContextPath() + "index.jsp").include(req, resp);//после того как заменила путь на "/" - теперь не работает
-
         out.print("<div style=\"color:Tomato;\" text-align: center;\">" +
                 "You are successfully logged out!</div>");
+
+        req.getRequestDispatcher("index.jsp").include(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher(req.getContextPath() + "/").forward(req, resp);
+        req.getRequestDispatcher("/").forward(req, resp);
     }
 }
